@@ -2,13 +2,23 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
+const startBtn = document.querySelector('[data-start]');
+startBtn.setAttribute('disabled', 'true');
+
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
+    if (selectedDates[0].getTime() < options.defaultDate.getTime()) {
+      startBtn.setAttribute('disabled', 'true');
+      Notiflix.Notify.warning('Please choose a date in the future');
+    } else {
+      startBtn.removeAttribute('disabled');
+    }
+    console.log(selectedDates[0].getTime());
+    console.log(options.defaultDate.getTime());
   },
 };
 
