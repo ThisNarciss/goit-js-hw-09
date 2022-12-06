@@ -40,7 +40,13 @@ function onBtnStartClick() {
 
   isActive = true;
 
-  setInterval(() => {
+  const timerId = setInterval(() => {
+    if (Date.now() >= futureDate) {
+      clearInterval(timerId);
+      return;
+    }
+    console.log(futureDate);
+    console.log(Date.now());
     const deltaTime = futureDate - Date.now();
     const timeConvert = convertMs(deltaTime);
     const { days, hours, minutes, seconds } = timeConvert;
