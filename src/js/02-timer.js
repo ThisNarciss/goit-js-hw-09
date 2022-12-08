@@ -45,8 +45,6 @@ function onBtnStartClick() {
       clearInterval(timerId);
       return;
     }
-    console.log(futureDate);
-    console.log(Date.now());
     const deltaTime = futureDate - Date.now();
     const timeConvert = convertMs(deltaTime);
     const { days, hours, minutes, seconds } = timeConvert;

@@ -17,6 +17,32 @@ img {
   max-width: 100%;
 }
 
+input[id='datetime-picker'] {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 4px;
+}
+
+button[data-start] {
+  display: flex;
+  justify-content: center;
+
+  padding: 10px 25px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
 .timer {
   display: flex;
   align-items: center;
@@ -34,7 +60,7 @@ img {
   font-size: 40px;
   padding: 20px;
 
-  border: 1px solid black;
+  border-radius: 4px;
 
   background-color: black;
   color: white;

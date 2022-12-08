@@ -8,6 +8,7 @@ const refs = {
   btnStart: document.querySelector('button[data-start]'),
   btnStop: document.querySelector('button[data-stop]'),
 };
+
 let timerId = null;
 
 refs.btnStart.addEventListener('click', onBtnStartClick);
