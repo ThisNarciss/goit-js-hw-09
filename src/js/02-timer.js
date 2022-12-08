@@ -18,8 +18,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    if (selectedDates[0] < options.defaultDate) {
-      startBtn.setAttribute('disabled', 'true');
+    if (selectedDates[0] <= options.defaultDate) {
       Notiflix.Notify.warning('Please choose a date in the future');
     } else {
       startBtn.removeAttribute('disabled');
@@ -52,7 +51,6 @@ function onBtnStartClick() {
     timerHours.textContent = hours;
     timerMinutes.textContent = minutes;
     timerSeconds.textContent = seconds;
-    console.log(`${days}::${hours}:${minutes}:${seconds}`);
   }, 1000);
 }
 

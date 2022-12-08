@@ -17,6 +17,7 @@ function createPromise(position, delay) {
   });
 }
 
+// Solution 1
 function onBtnFormSubmit(event) {
   event.preventDefault();
 
@@ -40,3 +41,31 @@ function onBtnFormSubmit(event) {
     delayFirst += delayStep;
   }
 }
+
+// Solution 2
+// function onBtnFormSubmit(event) {
+//   event.preventDefault();
+
+//   let delayFirst = Number(event.currentTarget.elements.delay.value);
+//   const delayStep = Number(event.currentTarget.elements.step.value);
+//   const amount = Number(event.currentTarget.elements.amount.value);
+//   let positionNum = 1;
+//   const intervalId = setInterval(() => {
+//     if (positionNum === amount) {
+//       clearInterval(intervalId);
+//     }
+//     createPromise(positionNum, delayFirst)
+//       .then(({ position, delay }) => {
+//         Notiflix.Notify.success(
+//           `✅ Fulfilled promise ${position} in ${delay}ms`
+//         );
+//       })
+//       .catch(({ position, delay }) => {
+//         Notiflix.Notify.failure(
+//           `❌ Rejected promise ${position} in ${delay}ms`
+//         );
+//       });
+//     delayFirst += delayStep;
+//     positionNum += 1;
+//   }, delayStep);
+// }
